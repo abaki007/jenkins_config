@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<slave>
+  <name>name_update</name>
+  <description>AWS Linux Slave node</description>
+  <remoteFS>/var/jenkins</remoteFS>
+  <numExecutors>4</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.12">
+    <host>ip_update</host>
+    <port>22</port>
+    <credentialsId>jenkins_ssh</credentialsId>
+    <maxNumRetries>10</maxNumRetries>
+    <retryWaitTime>5</retryWaitTime>
+  </launcher>
+  <label>label_update</label>
+  <nodeProperties/>
+</slave>
+
